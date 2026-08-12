@@ -1,0 +1,41 @@
+{
+  "notifications": [
+    "Welcome to the 4-1 Learning Repository!",
+    "Mid-term exam schedules have been announced."
+  ],
+  "materials": [
+    {
+      "id": "ml-unit-1",
+      "name": "Unit 1 Notes",
+      "category": "Machine Learning",
+      "originalName": "unit-1-notes.pdf",
+      "type": "application/pdf",
+      "size": 245760,
+      "url": "./materials/machine-learning/unit-1-notes.pdf",
+      "addedAt": "2026-08-12T10:00:00Z",
+      "isExam": false
+    },
+    {
+      "id": "ml-mid-1-qp",
+      "name": "Mid 1 Question Paper",
+      "category": "Machine Learning",
+      "originalName": "mid1-qp.pdf",
+      "type": "application/pdf",
+      "size": 150000,
+      "url": "./materials/machine-learning/mid1-qp.pdf",
+      "addedAt": "2026-08-10T10:00:00Z",
+      "isExam": true
+    },
+    {
+      "id": "cc-syllabus",
+      "name": "Course Syllabus",
+      "category": "Cloud Computing",
+      "originalName": "syllabus.docx",
+      "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size": 125000,
+      "url": "./materials/cloud-computing/syllabus.docx",
+      "addedAt": "2026-07-20T10:00:00Z",
+      "isExam": false
+    }
+  ]
+}

@@ -5,6 +5,17 @@
   ],
   "materials": [
     {
+      "id": "materials-AENT-AEnt_UNIT-I",
+      "name": "AEnt_UNIT-I",
+      "category": "AENT",
+      "originalName": "AEnt_UNIT-I.pptx",
+      "type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 5534758,
+      "url": "./materials/AENT/AEnt_UNIT-I.pptx",
+      "addedAt": "2026-08-12T18:49:13.354Z",
+      "isExam": false
+    },
+    {
       "id": "materials-ASD-UNIT-1",
       "name": "UNIT-1",
       "category": "ASD",

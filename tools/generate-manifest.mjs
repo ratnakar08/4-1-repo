@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-
+// node tools/generate-manifest.mjs
 const materialsDir = path.join(process.cwd(), 'materials');
 const manifestPath = path.join(materialsDir, 'manifest.json');
 

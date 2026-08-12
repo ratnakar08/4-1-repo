@@ -2,87 +2,54 @@
 
 Static, no-backend website for 4th year 1st semester learning materials.
 
-## Files
+## Features
 
-- `index.html` - student library and author portal
-- `styles.css` - minimal black interface
-- `app.js` - browser-side upload, download, filtering, logs, exports
-- `materials/manifest.json` - public file catalog for deployed static hosting
+- **Minimalistic Dark Theme**: Sleek UI with folder navigation.
+- **Notification Carousel**: Dynamically cycle through important announcements.
+- **Audience Tools**: Search, Sort, NEW badges, File Type Icons, and File Previews.
+- **Upcoming Exams**: Pinned section for important exam materials.
 
-## Important no-backend limit
+## How to add materials
 
-Default author passcode:
+This setup uses GitHub Pages to serve static files. 
 
-```text
-author-4-1
-```
+1. Drop your files into their respective folders under `materials/`. For example: `materials/Machine Learning/Notes.pdf`.
+2. Run the manifest generator script to automatically update the website database:
+   ```bash
+   node tools/generate-manifest.mjs
+   ```
+3. Commit and push the changes:
+   ```bash
+   git add .
+   git commit -m "Added new Machine Learning notes"
+   git push origin main
+   ```
 
-Before publishing, change the passcode by replacing `AUTHOR_PASSCODE_HASH` in `app.js` with the SHA-256 hash of your new passcode.
+GitHub Pages will redeploy, and the students will see the new files!
 
-Generate a new hash:
+## How to edit notifications
 
-```bash
-node -e "crypto.subtle.digest('SHA-256', new TextEncoder().encode('your-new-passcode')).then(b=>console.log([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')))"
-```
-
-For a live public repository, add files to the project and update `materials/manifest.json`, then redeploy the static site.
-
-## GitHub Pages workflow
-
-This setup works well with GitHub Pages because all public files are committed into the repo.
-
-1. Create a GitHub repository.
-2. Push this folder to GitHub.
-3. In GitHub, open `Settings` > `Pages`.
-4. Set source to your main branch and root folder.
-5. Open the Pages URL after GitHub finishes deploying.
-
-When you want to publish a new material, add it to the repo and push:
-
-```bash
-node tools/add-material.mjs "/path/to/file.pdf" "Machine Learning" "Unit 1 Notes"
-git add materials
-git commit -m "Add machine learning unit 1 notes"
-git push
-```
-
-The script copies the file into the correct subject folder and updates `materials/manifest.json`. After the push, GitHub Pages redeploys and students can see the new file.
-
-Example:
-
+Open `materials/manifest.json` and edit the `notifications` array at the top of the file:
 ```json
 {
-  "materials": [
-    {
-      "id": "ml-unit-1",
-      "name": "Unit 1 Notes",
-      "category": "Machine Learning",
-      "originalName": "unit-1-notes.pdf",
-      "type": "application/pdf",
-      "size": 245760,
-      "url": "./materials/machine-learning/unit-1-notes.pdf"
-    }
-  ]
+  "notifications": [
+    "Welcome to the 4-1 Learning Repository!",
+    "Mid-term exam schedules have been announced."
+  ],
+  "materials": [ ... ]
 }
 ```
 
-Recommended folder layout:
+## How to mark an item as an Exam material
 
-```text
-materials/
-  manifest.json
-  machine-learning/
-    unit-1-notes.pdf
-  cloud-computing/
-    syllabus.pdf
-```
+By default, the `tools/generate-manifest.mjs` script sets `"isExam": false` for all files. If you want a file to show up in the pinned **Upcoming Exams** section, simply open `materials/manifest.json`, find the file in the JSON, and change it to `"isExam": true`.
 
 ## Run locally
 
-Open `index.html` directly in a browser. For best manifest loading behavior, serve the folder with a static server:
+For best loading behavior (to avoid CORS issues with the manifest file), serve the folder with a static server:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Then open `http://localhost:8080` in your browser.

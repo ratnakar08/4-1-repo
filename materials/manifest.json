@@ -93,6 +93,17 @@
       "isExam": false
     },
     {
+      "id": "materials-B.Tech%20-%20IV%20-%20Year%20-%20I%20Sem%20-%20I%20Mid%20Examination%2C%20AUGUST%20-%202026",
+      "name": "B.Tech - IV - Year - I Sem - I Mid Examination, AUGUST - 2026",
+      "category": "Schedule",
+      "originalName": "B.Tech - IV - Year - I Sem - I Mid Examination, AUGUST - 2026.pdf",
+      "type": "application/pdf",
+      "size": 443781,
+      "url": "./materials/B.Tech - IV - Year - I Sem - I Mid Examination, AUGUST - 2026.pdf",
+      "addedAt": "2026-08-12T18:45:20.932Z",
+      "isExam": true
+    },
+    {
       "id": "materials-CC-UNIT-1%20cc%20(1)",
       "name": "UNIT-1 cc (1)",
       "category": "CC",

@@ -230,7 +230,7 @@ input:focus, select:focus {
 /* Exams Section */
 .exams-container {
   margin-bottom: 48px;
-  padding: 24px;
+  padding: 24px 20px;
   border-radius: var(--radius);
   background: var(--exam-bg);
   border: 1px solid var(--exam-border);
@@ -343,6 +343,7 @@ input:focus, select:focus {
   align-items: center;
   gap: 10px;
   margin-bottom: 4px;
+  min-width: 0;
 }
 
 .file-name {
@@ -351,6 +352,8 @@ input:focus, select:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .badge {

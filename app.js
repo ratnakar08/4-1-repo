@@ -28,7 +28,7 @@ async function init() {
   const data = await loadManifestData();
   materials = data.materials || [];
   notifications = data.notifications || ["Welcome to the 4-1 Learning Repository!"];
-  
+
   bindEvents();
   startCarousel();
   renderExams();
@@ -62,7 +62,7 @@ async function loadManifestData() {
 // ---------------------------------
 function startCarousel() {
   if (notifications.length === 0) return;
-  
+
   els.carousel.innerHTML = "";
   notifications.forEach((note, idx) => {
     const div = document.createElement("div");
@@ -75,13 +75,13 @@ function startCarousel() {
     setInterval(() => {
       const items = els.carousel.querySelectorAll(".notification-item");
       const current = items[carouselIndex];
-      
+
       carouselIndex = (carouselIndex + 1) % items.length;
       const next = items[carouselIndex];
 
       current.classList.remove("active");
       current.classList.add("exit");
-      
+
       next.classList.remove("exit");
       next.classList.add("active");
     }, 5000);
@@ -93,15 +93,15 @@ function startCarousel() {
 // ---------------------------------
 function renderExams() {
   const examMaterials = materials.filter(m => m.isExam);
-  
+
   if (examMaterials.length === 0) {
     els.examsContainer.classList.add("hidden");
     return;
   }
-  
+
   els.examsContainer.classList.remove("hidden");
   els.examsList.innerHTML = "";
-  
+
   const sortedExams = sortMaterials(examMaterials, "newest");
   sortedExams.forEach(item => {
     els.examsList.appendChild(createFileRow(item));
@@ -119,19 +119,19 @@ function getCategories() {
 function renderFolders() {
   els.folderGrid.innerHTML = "";
   const categories = getCategories();
-  
+
   categories.forEach(category => {
     const itemsInCategory = materials.filter(m => m.category === category);
-    
+
     const node = els.folderTemplate.content.firstElementChild.cloneNode(true);
     node.querySelector(".folder-name").textContent = category;
     node.querySelector(".folder-count").textContent = `${itemsInCategory.length} ${itemsInCategory.length === 1 ? 'file' : 'files'}`;
-    
+
     node.addEventListener("click", () => {
       currentCategory = category;
       showCategoryFiles(category);
     });
-    
+
     els.folderGrid.appendChild(node);
   });
 }
@@ -152,13 +152,13 @@ function showCategoryFiles(category) {
   els.examsContainer.classList.add("hidden"); // Hide exams when browsing a specific folder
   els.fileView.classList.remove("hidden");
   els.fileViewTitle.textContent = category;
-  
+
   renderFileList();
 }
 
 function handleSearch() {
   const query = els.searchInput.value.trim().toLowerCase();
-  
+
   if (query) {
     els.foldersContainer.classList.add("hidden");
     els.examsContainer.classList.add("hidden");
@@ -169,7 +169,7 @@ function handleSearch() {
     showFoldersView();
     return; // Don't render file list if query is empty and we go back to folders
   }
-  
+
   renderFileList();
 }
 
@@ -183,20 +183,20 @@ function handleSort() {
 function renderFileList() {
   const query = els.searchInput.value.trim().toLowerCase();
   let filtered = materials;
-  
+
   if (currentCategory) {
     filtered = filtered.filter(m => m.category === currentCategory);
   }
-  
+
   if (query) {
     filtered = filtered.filter(item => {
       const text = `${item.name} ${item.category} ${item.originalName || ""}`.toLowerCase();
       return text.includes(query);
     });
   }
-  
+
   filtered = sortMaterials(filtered, els.sortFilter.value);
-  
+
   els.fileList.innerHTML = "";
   if (filtered.length > 0) {
     filtered.forEach(item => els.fileList.appendChild(createFileRow(item)));
@@ -229,13 +229,13 @@ function isNew(addedAt) {
   const addedDate = new Date(addedAt);
   const now = new Date();
   const diffDays = (now - addedDate) / (1000 * 60 * 60 * 24);
-  return diffDays <= 7;
+  return diffDays <= 2;
 }
 
 function getFileIconSvg(type, filename) {
   const ext = (filename || "").split('.').pop().toLowerCase();
   let iconClass = "default";
-  
+
   if (type === "application/pdf" || ext === "pdf") {
     iconClass = "pdf";
   } else if (ext === "doc" || ext === "docx") {
@@ -260,26 +260,26 @@ function getFileIconSvg(type, filename) {
 
 function createFileRow(item) {
   const node = els.fileTemplate.content.firstElementChild.cloneNode(true);
-  
+
   // Icon
   node.querySelector(".file-icon").innerHTML = getFileIconSvg(item.type, item.originalName || item.name);
-  
+
   // Name
   node.querySelector(".file-name").textContent = item.name;
-  
+
   // New Badge
   if (isNew(item.addedAt)) {
     node.querySelector(".new-badge").classList.remove("hidden");
   }
-  
+
   // Meta
   const dateStr = item.addedAt ? new Date(item.addedAt).toLocaleDateString() : 'Unknown date';
   node.querySelector(".file-meta").textContent = `${item.category} • ${formatBytes(item.size)} • Added ${dateStr}`;
-  
+
   // Action Link
   const link = node.querySelector(".preview-link");
   link.href = item.url;
-  
+
   return node;
 }
 

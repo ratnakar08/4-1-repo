@@ -5,14 +5,47 @@
   ],
   "materials": [
     {
-      "id": "materials-AENT-AEnt_UNIT-I",
-      "name": "AEnt_UNIT-I",
+      "id": "materials-4-1%20question%20papers%20cse",
+      "name": "4-1 question papers cse",
+      "category": "Materials",
+      "originalName": "4-1 question papers cse.pdf",
+      "type": "application/pdf",
+      "size": 8668934,
+      "url": "./materials/4-1 question papers cse.pdf",
+      "addedAt": "2026-08-16T10:14:31.515Z",
+      "isExam": true
+    },
+    {
+      "id": "materials-AENT-AENT%20(WF)%20-%20I",
+      "name": "AENT (WF) - I",
       "category": "AENT",
-      "originalName": "AEnt_UNIT-I.pptx",
+      "originalName": "AENT (WF) - I.ppt",
+      "type": "application/vnd.ms-powerpoint",
+      "size": 3824640,
+      "url": "./materials/AENT/AENT (WF) - I.ppt",
+      "addedAt": "2026-08-16T10:11:39.189Z",
+      "isExam": false
+    },
+    {
+      "id": "materials-AENT-AENT%20(WF)%20-%20II",
+      "name": "AENT (WF) - II",
+      "category": "AENT",
+      "originalName": "AENT (WF) - II.pptx",
       "type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-      "size": 5534758,
-      "url": "./materials/AENT/AEnt_UNIT-I.pptx",
-      "addedAt": "2026-08-12T18:49:13.354Z",
+      "size": 447295,
+      "url": "./materials/AENT/AENT (WF) - II.pptx",
+      "addedAt": "2026-08-16T10:11:31.622Z",
+      "isExam": false
+    },
+    {
+      "id": "materials-AENT-AENT%20(WF)%20-%20III",
+      "name": "AENT (WF) - III",
+      "category": "AENT",
+      "originalName": "AENT (WF) - III.pptx",
+      "type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 2427998,
+      "url": "./materials/AENT/AENT (WF) - III.pptx",
+      "addedAt": "2026-08-16T10:11:23.198Z",
       "isExam": false
     },
     {
@@ -95,13 +128,13 @@
     {
       "id": "materials-B.Tech%20-%20IV%20-%20Year%20-%20I%20Sem%20-%20I%20Mid%20Examination%2C%20AUGUST%20-%202026",
       "name": "B.Tech - IV - Year - I Sem - I Mid Examination, AUGUST - 2026",
-      "category": "Schedule",
+      "category": "Materials",
       "originalName": "B.Tech - IV - Year - I Sem - I Mid Examination, AUGUST - 2026.pdf",
       "type": "application/pdf",
       "size": 443781,
       "url": "./materials/B.Tech - IV - Year - I Sem - I Mid Examination, AUGUST - 2026.pdf",
       "addedAt": "2026-08-12T18:45:20.932Z",
-      "isExam": true
+      "isExam": false
     },
     {
       "id": "materials-CC-UNIT-1%20cc%20(1)",
@@ -137,6 +170,28 @@
       "isExam": false
     },
     {
+      "id": "materials-CC-UNIT-3%20cc%20(1)",
+      "name": "UNIT-3 cc (1)",
+      "category": "CC",
+      "originalName": "UNIT-3 cc (1).ppt",
+      "type": "application/vnd.ms-powerpoint",
+      "size": 21399552,
+      "url": "./materials/CC/UNIT-3 cc (1).ppt",
+      "addedAt": "2026-08-16T10:13:36.724Z",
+      "isExam": false
+    },
+    {
+      "id": "materials-CC-UNIT-3-1%20cc%20(1)",
+      "name": "UNIT-3-1 cc (1)",
+      "category": "CC",
+      "originalName": "UNIT-3-1 cc (1).ppt",
+      "type": "application/vnd.ms-powerpoint",
+      "size": 137216,
+      "url": "./materials/CC/UNIT-3-1 cc (1).ppt",
+      "addedAt": "2026-08-16T10:13:38.809Z",
+      "isExam": false
+    },
+    {
       "id": "materials-CCPD-CCPD%20UNIT%20-%201(1)",
       "name": "CCPD UNIT - 1(1)",
       "category": "CCPD",
@@ -167,6 +222,17 @@
       "size": 6554404,
       "url": "./materials/CCPD/CCPD UNIT - 3(1).pptx",
       "addedAt": "2026-08-12T18:35:51.021Z",
+      "isExam": false
+    },
+    {
+      "id": "materials-CNS-CNS%203",
+      "name": "CNS 3",
+      "category": "CNS",
+      "originalName": "CNS 3.pptx",
+      "type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size": 1702059,
+      "url": "./materials/CNS/CNS 3.pptx",
+      "addedAt": "2026-08-16T10:10:15.264Z",
       "isExam": false
     },
     {
